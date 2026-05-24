@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learner AI</title>
+    <meta name="description" content="AI-powered language learning: transcription, lesson summaries, vocabulary tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h1>Language Learner</h1>
+                <span>AI TUTOR</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-page="home">
+                    <span class="nav-icon">🎙️</span> Record &amp; Learn
+                </button>
+                <button class="nav-item" data-page="textbooks">
+                    <span class="nav-icon">📚</span> Textbooks
+                </button>
+                <button class="nav-item" data-page="flashcards">
+                    <span class="nav-icon">🎠</span> Flashcards
+                </button>
+                <button class="nav-item" data-page="translate">
+                    <span class="nav-icon">🔤</span> Translate
+                </button>
+                <button class="nav-item" data-page="progress">
+                    <span class="nav-icon">📊</span> My Progress
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                v1.1.0
+            </div>
+        </aside>
+
+        <main class="main-content" id="main-root"></main>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script type="module">
+        // Cache-bust by injecting a timestamp query; forces fresh load after server restart
+        const v = Date.now();
+        const s = document.createElement('script');
+        s.type = 'module';
+        s.src = `src/main.js?v=${v}`;
+        document.head.appendChild(s);
+    </script>
+</body>
+</html>
