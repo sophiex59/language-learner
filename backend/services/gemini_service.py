@@ -43,11 +43,11 @@ Return valid JSON only."""
 
 
 async def generate_lesson_summary(transcript_text: str, topics: str = "") -> dict:
-    """Generate structured AI lesson recap from transcript."""
+    """Generate structured AI lesson recap from transcript using UK English spelling."""
     prompt = f"""You are an expert language teacher analysing a German language lesson transcript.
 The student is learning German. Topics covered this lesson: {topics or "not specified"}.
 
-Analyse the transcript and return ONLY a JSON object with these fields:
+Analyse the transcript and return ONLY a JSON object with these fields. Use UK English spelling (e.g., summarise, analyse, colour, organise, next steps):
 - "went_well": bullet points (as a list of strings) of what the student did well
 - "struggles": bullet points of errors, hesitations, or weak areas (be specific — quote examples)
 - "new_vocab": list of new German words/phrases introduced, each as {{"word": "...", "meaning": "..."}}
@@ -109,6 +109,7 @@ async def generate_progress_report(context: dict) -> str:
             lessons_text += f"📝 Recommended: {'; '.join(steps)}\n"
 
     prompt = f"""You are a concise AI language teacher writing a brief progress report. Keep the entire report under 350 words.
+Use UK English spelling (e.g., summarise, analyse, colour, organise) throughout the report.
 
 ## Student's Goals
 {goals_text}
@@ -178,7 +179,7 @@ Return valid JSON only."""
 
 
 async def detect_lesson_metadata(transcript_text: str, available_textbooks: list[dict] = None) -> dict:
-    """Analyze transcript to find title, topics, textbook, and pages."""
+    """Analyse transcript to find title, topics, textbook, and pages."""
     
     # Flag truncation
     limit = 50000
@@ -193,11 +194,10 @@ async def detect_lesson_metadata(transcript_text: str, available_textbooks: list
         for tb in available_textbooks:
             tb_list_str += f"- ID {tb['id']}: {tb['title']} (Nickname: {tb.get('nickname')})\n"
 
-    prompt = f"""Analyze this language lesson transcript and extract metadata.
+    prompt = f"""Analyse this language lesson transcript and extract metadata. Use UK English spelling for any text returned.
 {truncation_warning}
 {tb_list_str}
 
-Find:
 Find:
 1. A concise, descriptive title.
 2. Main topics or grammar points.

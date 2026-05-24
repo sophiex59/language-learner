@@ -1,6 +1,7 @@
 # 🏫 Language Learner
+This was inspired by my realisation that in language learning, I typically used many unconnected resources: google translate, anki, textbooks, internet exercises, teachers etc. I also didn't have any record of the sections and vocab I'd struggled with on a per-lesson/learning session basis.
 
-A local-first, AI-powered study companion designed for students working with private language tutors and structured textbooks (e.g., German *Menschen B1.1*). 
+This is a local-first, AI-powered study companion designed for students working with language tutors/in classes and structured textbooks or other study material (e.g., I used it for learning German with the *Menschen* textbooks, and a teacher once a week). 
 
 Instead of letting recorded lessons, textbook exercises, grammar notes, and vocabulary lists scatter across different apps, **Language Learner** unifies them into a single, cohesive workflow.
 
@@ -13,7 +14,7 @@ Instead of letting recorded lessons, textbook exercises, grammar notes, and voca
 * **📚 Textbook & Audio Integration**
   Drop textbook PDFs and chapter audio tracks directly into the app. On startup, the system indexes chapters and page content, letting the AI map class conversations to specific textbook exercises and chapters.
 * **🤖 AI Teacher Summaries & Homework Audits**
-  Powered by Gemini 2.5 Pro, the AI analyzes each lesson to extract:
+  Powered by Gemini 2.5 Pro, the AI analyses each lesson to extract:
   * **What Went Well** and **Struggles** (e.g. grammar focus areas like *Konjunktiv II*, *Relativsätze*, or *Passiv*).
   * **🏠 Homework Tracking** complete with verbatim transcription quotes directly pulling the teacher's assignment words.
   * **Actionable Next Steps** to guide your study window.

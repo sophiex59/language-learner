@@ -46,7 +46,7 @@ async function loadLessonsList() {
           <div class="card" style="cursor: pointer;" onclick="window.navigateTo('lessons', ${l.id})">
             <div class="flex justify-between mb-12">
               <span class="text-sm text-dim">${fmtDate(l.date || l.created_at)}</span>
-              ${l.summary.generated_at ? '<span class="badge badge-green">AI Summarized</span>' : '<span class="badge badge-amber">No Summary</span>'}
+              ${l.summary.generated_at ? '<span class="badge badge-green">AI Summarised</span>' : '<span class="badge badge-amber">No Summary</span>'}
             </div>
             <h3 style="margin: 0 0 8px 0;">${l.title || 'Untitled Lesson'}</h3>
             <p class="text-sm text-muted mb-12">${l.topics || 'No topics specified'}</p>
@@ -276,7 +276,7 @@ async function renderLessonDetail(container, id) {
       document.getElementById('summarize-btn').onclick = async () => {
         const btn = document.getElementById('summarize-btn');
         btn.disabled = true;
-        btn.textContent = 'Analyzing...';
+        btn.textContent = 'Analysing...';
         try {
           const res = await api.lessons.summarise(id);
           toast('AI Summary generated!', 'success');
