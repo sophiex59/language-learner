@@ -1,12 +1,17 @@
 .env
+.venv/
+venv/
 backend/venv/
 backend/data/
 .pytest_cache/
+.ruff_cache/
 __pycache__/
 *.pyc
 *.pyo
 node_modules/
 frontend/dist/
+frontend/.next/
+frontend/build/
 .vscode/
 .idea/
 *.DS_Store
